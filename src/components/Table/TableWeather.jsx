@@ -1,6 +1,5 @@
 import React from 'react'
-import { Typography, Grid } from '@mui/material'
-import { styled } from '@mui/material/styles';
+import { Typography} from '@mui/material'
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material'
 import useTableWeatherStyle from './TableWeatherStyle.js';
 import dataWeatherTable from '../../data/DataWeatherTable.jsx';
@@ -14,19 +13,15 @@ import dataWeatherTable from '../../data/DataWeatherTable.jsx';
 */
 
 /*  Explicación de props:
-        keyRow: la key del elemento.
         cell1: la primer celda de la fila.
         cell2: la segunda celda de la fila.
         icon: el icono de la columna.
 }*/
 
-const Row = ({keyRow,cell1, cell2, icon}) => {
+const Row = ({cell1, cell2, icon}) => {
     const classes = useTableWeatherStyle();
     return(
-        <TableRow
-            key={keyRow}
-            className={classes.rowStyle}
-        >
+        <>
             <TableCell component="th" scope="row">
                 <div className={classes.row}>
                     <div className={classes.icon}>{icon}</div>
@@ -34,7 +29,7 @@ const Row = ({keyRow,cell1, cell2, icon}) => {
                 </div>                
             </TableCell>
             <TableCell align="right"><Typography variant="body1" >{cell2}</Typography></TableCell>
-        </TableRow>
+        </>
 
     );
 
@@ -58,12 +53,15 @@ const SimpleTable = ({dataArr, climaData}) => {
                         dataArr.map((item, index) => {
 
                             return(
-                                <Row 
-                                    keyRow={index}
-                                    icon={item.icon}
-                                    cell1={item.title}
-                                    cell2={`${climaData[item.key]}${item.after}`}
-                                />
+                                <TableRow
+                                    key={index}
+                                    className={classes.rowStyle}>
+                                    <Row 
+                                        icon={item.icon}
+                                        cell1={item.title}
+                                        cell2={`${climaData[item.key]}${item.after}`}
+                                    />
+                                </TableRow>
                             )
                         })
                     }
