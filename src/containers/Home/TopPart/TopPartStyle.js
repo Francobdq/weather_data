@@ -35,7 +35,6 @@ const useTopPartSytle = makeStyles(theme => ({
         },
     },
     buttonHolder:{
-        // centrado a la derecha
         display: 'flex',
         justifyContent: 'flex-end',
         paddingRight: '5%',

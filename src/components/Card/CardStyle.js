@@ -6,7 +6,6 @@ const useCardStyle = makeStyles((theme) => ({
     holderAbs:{
         backgroundColor: 'rgba(255,255,255,0.99)', 
         borderRadius: "10px",
-        //border: "solid 0.2px #9e9e9e",
         boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
     },
 

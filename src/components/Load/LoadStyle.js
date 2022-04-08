@@ -8,7 +8,6 @@ const useLoadStyle = makeStyles((theme) => ({
         height: "100%",
     },
     loadImg:{
-        // center in the div
         position: "absolute",
         top: "75%",
         left: "50%",
